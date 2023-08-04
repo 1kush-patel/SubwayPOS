@@ -18,7 +18,7 @@ namespace SubwayPOS
             InitializeComponent();
         }
 
-        public string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=Subway;Integrated Security=True";
+        public string connectionString = "Data Source = DESKTOP - L6VKGRE; Initial Catalog = Subway; Integrated Security = True";
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -47,8 +47,8 @@ namespace SubwayPOS
 
                 if (reader.Read())
                 {
-                    PunchingScreenMain punchScreenMain = new PunchingScreenMain(int.Parse(reader["USERID"].ToString()), reader["USERNAME"].ToString());
-                    punchScreenMain.Show();
+                    HomeScreen homeScreenMain = new HomeScreen(int.Parse(reader["USERID"].ToString()), reader["USERNAME"].ToString());
+                    homeScreenMain.Show();
                     Hide();
                 }
                 else
